@@ -10,7 +10,7 @@ inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION=""
 HOMEPAGE=""
-SRC_URI="http://central.maven.org/maven2/com/github/librepdf/${PN}/${PV}/${P}-sources.jar"
+SRC_URI="https://github.com/LibrePDF/OpenPDF/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MPL-2.0"
 SLOT="0"
@@ -26,7 +26,19 @@ DEPEND=">=virtual/jdk-1.7
 RDEPEND=">=virtual/jre-1.7
 	${CP_DEPEND}"
 
-S="${WORKDIR}"
+S="${WORKDIR}/OpenPDF-${PV}/openpdf"
+
+PATCHES=( "${FILESDIR}"/${P}-PDFGraphics2D-constructors.patch )
 
 JAVA_ENCODING="ISO-8859-1"
-JAVA_SRC_DIR="com"
+JAVA_SRC_DIR="src/main/java"
+
+src_prepare() {
+	default
+	java-utils-2_src_prepare
+}
+
+src_compile() {
+	java-pkg-simple_src_compile
+	java-pkg_addres ${PN}.jar src/main/resources
+}
