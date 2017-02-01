@@ -19,14 +19,16 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos"
 
-DEPEND=">=virtual/jdk-1.7
-	dev-java/junit:0
-	app-arch/unzip"
+CP_DEPEND="dev-java/junit:4"
 
-RDEPEND=">=virtual/jre-1.7"
+DEPEND=">=virtual/jdk-1.7
+	app-arch/unzip
+	${CP_DEPEND}"
+
+RDEPEND=">=virtual/jre-1.7
+	 ${CP_DEPEND}"
 
 S="${WORKDIR}"
 
-JAVA_GENTOO_CLASSPATH="junit"
 JAVA_ENCODING="ISO-8859-1"
 JAVA_SRC_DIR="org"
