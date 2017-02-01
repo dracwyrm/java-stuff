@@ -1,0 +1,34 @@
+diff -purN a/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFController.java b/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFController.java
+--- a/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFController.java	2016-12-22 20:04:26.000000000 +0000
++++ b/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFController.java	2017-02-01 14:16:45.897286586 +0000
+@@ -14,7 +14,7 @@ import org.herac.tuxguitar.song.models.T
+ import org.herac.tuxguitar.song.models.TGMeasureHeader;
+ import org.herac.tuxguitar.song.models.TGSong;
+ 
+-import com.itextpdf.text.FontFactory;
++import com.lowagie.text.FontFactory;
+ 
+ public class PDFController implements TGController {
+ 	
+diff -purN a/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFDocument.java b/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFDocument.java
+--- a/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFDocument.java	2016-12-22 20:04:26.000000000 +0000
++++ b/TuxGuitar-pdf/src/org/herac/tuxguitar/io/pdf/PDFDocument.java	2017-02-01 16:20:47.968565799 +0000
+@@ -11,12 +11,12 @@ import org.herac.tuxguitar.graphics.TGPa
+ import org.herac.tuxguitar.util.TGContext;
+ import org.herac.tuxguitar.util.error.TGErrorManager;
+ 
+-import com.itextpdf.awt.PdfGraphics2D;
+-import com.itextpdf.text.Document;
+-import com.itextpdf.text.Rectangle;
+-import com.itextpdf.text.pdf.PdfContentByte;
+-import com.itextpdf.text.pdf.PdfTemplate;
+-import com.itextpdf.text.pdf.PdfWriter;
++import com.lowagie.text.Document;
++import com.lowagie.text.Rectangle;
++import com.lowagie.text.pdf.PdfContentByte;
++import com.lowagie.text.pdf.PdfGraphics2D;
++import com.lowagie.text.pdf.PdfTemplate;
++import com.lowagie.text.pdf.PdfWriter;
+ 
+ public class PDFDocument implements PrintDocument{
+ 	
