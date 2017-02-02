@@ -42,7 +42,7 @@ PLUGIN_LIST=()
 src_prepare() {
 	java-pkg-2_src_prepare
 	default_src_prepare
-$(java-pkg_getjars swt-3.8)
+
 	sed -e "s|../TuxGuitar/lib/swt.jar|$(java-pkg_getjars swt-3.8)|" \
 		-i TuxGuitar*/build.properties || die "sed TuxGuitar*/build.properties failed"
 
