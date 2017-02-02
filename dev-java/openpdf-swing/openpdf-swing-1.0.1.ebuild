@@ -16,8 +16,10 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 
-CP_DEPEND=">=dev-java/bcprov-1.56:0
-	 >=dev-java/bcpkix-1.56:0"
+CP_DEPEND="~dev-java/openpdf-1.0.1:0
+	   ~dev-java/openpdf-html-1.0.1:0
+	   dev-java/pdf-renderer:0
+	   dev-java/dom4j:2"
 
 DEPEND=">=virtual/jdk-1.7
 	${CP_DEPEND}"
@@ -25,19 +27,7 @@ DEPEND=">=virtual/jdk-1.7
 RDEPEND=">=virtual/jre-1.7
 	${CP_DEPEND}"
 
-S="${WORKDIR}/OpenPDF-${PV}/openpdf"
-
-PATCHES=( "${FILESDIR}"/${P}-PDFGraphics2D-constructors.patch )
+S="${WORKDIR}/OpenPDF-${PV}/pdf-swing"
 
 JAVA_ENCODING="ISO-8859-1"
 JAVA_SRC_DIR="src/main/java"
-
-src_prepare() {
-	default
-	java-utils-2_src_prepare
-}
-
-src_compile() {
-	java-pkg-simple_src_compile
-	java-pkg_addres ${PN}.jar src/main/resources
-}
