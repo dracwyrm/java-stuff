@@ -13,7 +13,6 @@ MY_P="bc-java-${MY_PV}"
 
 DESCRIPTION="Java cryptography APIs"
 HOMEPAGE="http://www.bouncycastle.org/java.html"
-#SRC_URI="http://central.maven.org/maven2/org/bouncycastle/${MY_PN}/${PV}/${MY_P}.jar"
 SRC_URI="https://github.com/bcgit/bc-java/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -24,11 +23,9 @@ IUSE="test"
 KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos"
 
 DEPEND=">=virtual/jdk-1.7
-	test? ( dev-java/junit:4 )
-	${CP_DEPEND}"
+	test? ( dev-java/junit:4 )"
 
-RDEPEND=">=virtual/jre-1.7
-	 ${CP_DEPEND}"
+RDEPEND=">=virtual/jre-1.7"
 
 S="${WORKDIR}/bc-java-r1rv56/prov"
 
