@@ -52,7 +52,7 @@ $(java-pkg_getjars swt-3.8)
 	fi
 
 	LIBRARY_LIST=( TuxGuitar-lib  TuxGuitar-editor-utils TuxGuitar-ui-toolkit TuxGuitar
-		TuxGuitar-gm-utils TuxGuitar-ui-toolkit-swt TuxGuitar-awt-graphics
+		TuxGuitar-gm-utils TuxGuitar-ui-toolkit-swt $(usex pdf TuxGuitar-awt-graphics "")
 	)
 
 	PLUGIN_LIST=( $(usev alsa) ascii browser-ftp community compat

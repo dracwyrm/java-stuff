@@ -1,23 +1,18 @@
 diff -purN a/src/main/java/com/lowagie/text/pdf/PdfGraphics2D.java b/src/main/java/com/lowagie/text/pdf/PdfGraphics2D.java
---- a/src/main/java/com/lowagie/text/pdf/PdfGraphics2D.java	2016-07-11 09:51:04.000000000 +0100
-+++ b/src/main/java/com/lowagie/text/pdf/PdfGraphics2D.java	2017-02-01 16:37:15.648154187 +0000
-@@ -185,11 +185,23 @@ public class PdfGraphics2D extends Graph
-         setRenderingHint(HyperLinkKey.KEY_INSTANCE, HyperLinkKey.VALUE_HYPERLINKKEY_OFF);
+--- a/src/main/java/com/lowagie/text/pdf/PdfGraphics2D.java	2017-01-29 00:33:47.000000000 +0000
++++ b/src/main/java/com/lowagie/text/pdf/PdfGraphics2D.java	2017-02-02 14:57:42.027253886 +0000
+@@ -186,10 +186,18 @@ public class PdfGraphics2D extends Graph
      }
      
+     /**
++     * Shortcut constructor for PDFGraphics2D.
++     *
++     */
 +    public PdfGraphics2D(PdfContentByte cb, float width, float height) {
 +        this(cb, width, height, null, false, false, 0);
 +    }
-+
-+    public PdfGraphics2D(PdfContentByte cb, float width, float height, FontMapper fontMapper) {
-+        this(cb, width, height, fontMapper, false, false, 0);
-+    }
 +    
-+    public PdfGraphics2D(PdfContentByte cb, float width, float height, boolean onlyShapes) {
-+        this(cb, width, height, null, onlyShapes, false, 0);
-+    }
-+    
-     /**
++    /**
       * Constructor for PDFGraphics2D.
       *
       */
