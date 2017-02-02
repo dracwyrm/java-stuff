@@ -42,12 +42,12 @@ PLUGIN_LIST=()
 src_prepare() {
 	java-pkg-2_src_prepare
 	default_src_prepare
-
-	sed -e "s|../TuxGuitar/lib/swt.jar|$(java-pkg_getjar swt-3.8 swt.jar)|" \
+$(java-pkg_getjars swt-3.8)
+	sed -e "s|../TuxGuitar/lib/swt.jar|$(java-pkg_getjars swt-3.8)|" \
 		-i TuxGuitar*/build.properties || die "sed TuxGuitar*/build.properties failed"
 
 	if use pdf; then
-		sed -e "s|../TuxGuitar/lib/itext.jar|$(java-pkg_getjar openpdf openpdf.jar)|" \
+		sed -e "s|../TuxGuitar/lib/itext.jar|$(java-pkg_getjars openpdf)|" \
 		-i TuxGuitar-pdf/build.properties || die "sed TuxGuitar-pdf/build.properties failed"
 	fi
 
