@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 CP_DEPEND="~dev-java/openpdf-1.0.1:0
 	   ~dev-java/openpdf-html-1.0.1:0
 	   dev-java/pdf-renderer:0
-	   dev-java/dom4j:2"
+	   dev-java/dom4j:1"
 
 DEPEND=">=virtual/jdk-1.7
 	${CP_DEPEND}"
