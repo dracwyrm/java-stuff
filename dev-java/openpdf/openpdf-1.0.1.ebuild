@@ -14,12 +14,17 @@ SRC_URI="https://github.com/LibrePDF/OpenPDF/archive/${PV}.tar.gz -> openpdf-${P
 
 LICENSE="MPL-2.0"
 SLOT="0"
+
+IUSE="test"
+
 KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 
 CP_DEPEND=">=dev-java/bcprov-1.56:0
-	 >=dev-java/bcpkix-1.56:0"
+	   >=dev-java/bcpkix-1.56:0"
 
 DEPEND=">=virtual/jdk-1.7
+	test? ( dev-java/junit:4
+		dev-java/assertj-core:2 )
 	${CP_DEPEND}"
 
 RDEPEND=">=virtual/jre-1.7
@@ -40,4 +45,17 @@ src_prepare() {
 src_compile() {
 	java-pkg-simple_src_compile
 	java-pkg_addres ${PN}.jar src/main/resources
+}
+
+src_test() {
+	local DIR="src/test/java"
+	local CP="${DIR}/../resources:${DIR}:${PN}.jar:$(java-pkg_getjars junit-4,assertj-core-2)"
+
+	local TESTS=$(find "${DIR}" -name "*Test.java")
+	TESTS="${TESTS//src\/test\/java\/}"
+	TESTS="${TESTS//.java}"
+	TESTS="${TESTS//\//.}"
+
+	ejavac -cp "${CP}" -d "${DIR}" $(find "${DIR}" -name "*.java")
+	ejunit4 -classpath "${CP}" ${TESTS}
 }
