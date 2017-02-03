@@ -32,3 +32,5 @@ DEPEND="${CP_DEPEND}
 S="${WORKDIR}/${P}"
 
 PATCHES=( "${FILESDIR}/${P}-xpp3-add-removeAttribute.patch" )
+
+JAVA_SRC_DIR="src/main/java"
