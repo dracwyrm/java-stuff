@@ -16,7 +16,7 @@ HOMEPAGE="http://www.bouncycastle.org/java.html"
 SRC_URI="https://github.com/bcgit/bc-java/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="1"
 
 IUSE="test"
 
