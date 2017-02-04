@@ -17,10 +17,10 @@ SLOT="0"
 
 IUSE="test"
 
-KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
-CP_DEPEND=">=dev-java/bcprov-1.56:0
-	   >=dev-java/bcpkix-1.56:0"
+CP_DEPEND=">=dev-java/bcprov-1.56:1
+	   >=dev-java/bcpkix-1.56:1"
 
 DEPEND=">=virtual/jdk-1.7
 	test? ( dev-java/junit:4

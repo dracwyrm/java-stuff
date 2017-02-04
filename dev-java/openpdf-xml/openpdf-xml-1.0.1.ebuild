@@ -14,7 +14,7 @@ SRC_URI="https://github.com/LibrePDF/OpenPDF/archive/${PV}.tar.gz -> openpdf-${P
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
 CP_DEPEND="~dev-java/openpdf-1.0.1:0"
 

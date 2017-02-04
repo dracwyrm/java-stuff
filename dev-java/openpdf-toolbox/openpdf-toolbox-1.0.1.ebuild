@@ -17,7 +17,7 @@ SLOT="0"
 
 IUSE="test"
 
-KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
 CP_DEPEND="~dev-java/openpdf-1.0.1:0
 	   ~dev-java/openpdf-html-1.0.1:0
