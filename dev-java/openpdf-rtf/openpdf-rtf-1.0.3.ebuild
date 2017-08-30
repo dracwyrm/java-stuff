@@ -19,8 +19,8 @@ IUSE="test"
 
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
-CP_DEPEND="~dev-java/openpdf-1.0.1:0
-	   ~dev-java/openpdf-xml-1.0.1:0"
+CP_DEPEND="~dev-java/openpdf-${PV}:0
+	   ~dev-java/openpdf-xml-${PV}:0"
 
 DEPEND=">=virtual/jdk-1.7
 	test? ( dev-java/junit:4
@@ -30,7 +30,7 @@ DEPEND=">=virtual/jdk-1.7
 RDEPEND=">=virtual/jre-1.7
 	${CP_DEPEND}"
 
-S="${WORKDIR}/OpenPDF-${PV}/pdf-html"
+S="${WORKDIR}/OpenPDF-${PV}/pdf-rtf"
 
 JAVA_ENCODING="ISO-8859-1"
 JAVA_SRC_DIR="src/main/java"

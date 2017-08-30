@@ -32,8 +32,6 @@ RDEPEND=">=virtual/jre-1.7
 
 S="${WORKDIR}/OpenPDF-${PV}/openpdf"
 
-PATCHES=( "${FILESDIR}"/${P}-PDFGraphics2D-constructors.patch )
-
 JAVA_ENCODING="ISO-8859-1"
 JAVA_SRC_DIR="src/main/java"
 
